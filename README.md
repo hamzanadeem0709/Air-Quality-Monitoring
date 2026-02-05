@@ -1,40 +1,35 @@
 # Air Quality Analysis in Amsterdam (PM10 and PM2.5)
 
 ## Project Overview
-This repository contains the analysis of air quality in **Amsterdam, The Netherlands**, focusing on Particulate Matter (**PM10 and PM2.5**). The study investigates the impact of traffic peak hours on air quality along bike paths and identifies spatial trends in pollution across various neighborhoods.
+This repository contains the analysis of air quality in **Amsterdam, The Netherlands**, focusing on Particulate Matter (**PM10 and PM2.5**). 
 
-The project was developed as part of the "Acquisition & Exploration of Geo Data" course at the **University of Twente (ITC)**.
+![Air Quality Overview Map](https://github.com/hamzanadeem0709/Air-Quality-Monitoring/blob/main/PM10-Peakhours.jpg)
+*Figure 1: Spatial distribution of PM10 across Amsterdam neighborhoods.*
 
 ## Objectives
-* **Temporal Analysis**: Compare air quality along bike paths during peak hours (06:00–09:00 and 16:00–18:30) versus off-peak hours.
-* **Spatial Analysis**: Identify Amsterdam neighborhoods with the highest and lowest annual air pollution.
-* **Reliability Assessment**: Determine areas with the most and least reliable air pollution data based on sensor density and data variance.
-
-## Data Sources
-The analysis covers the period from **May 1, 2021, to April 30, 2022**, using:
-* **Luchtmeetnet**: Official hourly air quality measurements.
-* **Samenmeten (RIVM)**: Community-based low-cost sensor data.
-* **PDOK**: Administrative boundaries and neighborhood data for Amsterdam.
-* **OpenStreetMap (OSM)**: Spatial data for bike paths and road networks.
+* **Temporal Analysis**: Compare air quality during peak hours versus off-peak hours.
+* **Spatial Analysis**: Identify neighborhoods with the highest and lowest annual pollution.
+* **Reliability Assessment**: Evaluate sensor data quality.
 
 ## Methodology
-1.  **Data Acquisition**: Automated extraction of air quality data using Python scripts to interface with Luchtmeetnet and Samenmeten APIs.
-2.  **Preprocessing**: Data cleaning and segregation into peak/off-peak periods and weekday/weekend categories.
-3.  **Spatial Interpolation**: Used **Inverse Distance Weighted (IDW)** interpolation in ArcGIS Pro to create continuous pollution surfaces from point sensor data.
-4.  **Zonal Statistics**: Aggregated interpolated data to the neighborhood level to compare mean PM concentrations.
-5.  **Statistical Validation**: Generated histograms, boxplots, and QQplots in **R** to analyze data distribution, skewness, and the reliability of the measurements.
+The workflow involved data extraction via APIs, spatial interpolation using IDW in ArcGIS Pro, and statistical validation in R.
 
-## Key Findings
-* **Traffic Impact**: Significant increases in PM10 were observed during peak hours, often exceeding EU safety thresholds in high-traffic corridors.
-* **Neighborhood Trends**: Industrial zones and the city center exhibited the highest pollution levels, while coastal areas and parks (e.g., near the Amstel or Amsterdamse Bos) showed significantly better air quality.
-* **Data Reliability**: Reliability is highest in the Western and Central districts due to higher sensor density, while peripheral areas show higher uncertainty.
+![Workflow Diagram](path/to/your/methodology_flowchart.png)
+
+## Key Results
+
+### 1. Peak vs. Off-Peak Analysis
+Analysis shows significant increases in PM10 during peak traffic hours (06:00–09:00).
+![Peak Hour Comparison](path/to/your/peak_comparison_chart.png)
+
+### 2. Statistical Distribution
+Histograms and QQplots were used to verify the data distribution and identify skewness.
+![Statistical Analysis](path/to/your/histograms_plots.png)
 
 ## Tech Stack
-* **Python**: Data extraction and API management.
-* **ArcGIS Pro**: Spatial analysis, IDW interpolation, and mapping.
-* **R**: Statistical analysis and data visualization.
+* **Python**: Data extraction (APIs).
+* **ArcGIS Pro**: IDW interpolation & Zonal Statistics.
+* **R**: Statistical visualization.
 
 ## Author
-**Hamza Nadeem** M.Sc. Geo-Information Science and Earth Observation (GFM)  
-University of Twente, ITC Faculty  
-January 2024
+**Hamza Nadeem** (s3158551)
